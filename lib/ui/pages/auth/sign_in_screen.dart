@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_fruits/constants/reusable_card.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -12,17 +11,17 @@ class SignInScreen extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/placeholder.png'),
+                  image: AssetImage('images/auth_background.png'),
                   fit: BoxFit.cover,
                 ),
               ),
               child: Container(
-                margin: EdgeInsets.only(right: 500, bottom: 250),
+                margin: const EdgeInsets.only(right: 500, bottom: 250),
                 child: IconButton(
                   // TODO confirm the size of icon.arrow_back and chek out why its not working when its clicked
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back,
                     size: 40,
                     color: Colors.white,
@@ -34,11 +33,11 @@ class SignInScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              color: Color(0xFFfb7305),
+              color: const Color(0xFFfb7305),
               child: Container(
-                // TODO Fix padding requirements
-                padding: EdgeInsets.fromLTRB(28, 25, 28, 35),
-                decoration: BoxDecoration(
+                // FIXME: padding requirements
+                padding: const EdgeInsets.fromLTRB(28, 25, 28, 35),
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
                     topLeft: Radius.circular(20),
@@ -49,24 +48,24 @@ class SignInScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(
-                      child: Container(
+                      child: SizedBox(
                         width: 319,
                         height: 30,
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               'Sign in',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 20),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 211,
                             ),
                             IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.cancel,
                                 size: 28,
                               ),
@@ -76,24 +75,22 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
                     //TODO confirm space between widgets
-                    SizedBox(
-                      height: 12,
-                    ),
-                    Expanded(
-                      child: Container(
+                    const SizedBox(height: 12),
+                    const Expanded(
+                      child: SizedBox(
                         width: 319,
                         height: 60,
                         // margin: EdgeInsets.only(left: 11, right: marginEdgeInsetsRight),
                         child: TextField(
                           decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(
+                            contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 16),
                             hintText: 'Your email',
-                            border: const OutlineInputBorder(
+                            border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)),
                             ),
-                            enabledBorder: const OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFE67F1E),
                               ),
@@ -104,24 +101,24 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
-                    Expanded(
-                      child: Container(
+                    const Expanded(
+                      child: SizedBox(
                         width: 319,
                         height: 60,
                         // margin: EdgeInsets.only(left: 11, right: marginEdgeInsetsRight),
                         child: TextField(
                           decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(
+                            contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 16),
                             hintText: 'Your password',
-                            border: const OutlineInputBorder(
+                            border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)),
                             ),
-                            enabledBorder: const OutlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFFE67F1E),
                               ),
@@ -132,10 +129,10 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 0),
+                    const SizedBox(height: 0),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Forgot Password?',
                         style: TextStyle(
                           color: Color(0xFFE67F1E),
@@ -145,20 +142,20 @@ class SignInScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Expanded(
                       child: Container(
                         width: 318,
                         height: 60,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Color(0xFFFEC54B),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         child: TextButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             'SIGN IN',
                             style: TextStyle(
                               color: Colors.black,

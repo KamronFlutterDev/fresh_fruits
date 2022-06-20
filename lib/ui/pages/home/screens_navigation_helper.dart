@@ -57,7 +57,7 @@ class _ScreensNavigationHelperState extends State< ScreensNavigationHelper> {
           //TODO  provide image url for user account
           BottomNavigationBarItem(
             icon: CircleAvatar(
-              backgroundImage: AssetImage('images/placeholder.png'),
+              backgroundImage: AssetImage('images/auth_background.png'),
               radius: 23.81,
             ),
             label: 'Account',
