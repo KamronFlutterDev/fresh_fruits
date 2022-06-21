@@ -45,21 +45,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-// Container(
-// width: double.maxFinite,
-// child: ListView(
-// scrollDirection: Axis.horizontal,
-// shrinkWrap: true,
-// children: <Widget>[
-// Container(
-// width: 263,
-// height: 162,
-// decoration: BoxDecoration(
-// image: DecorationImage(image: AssetImage('images/conatainer_image.png'),
-// ),
-// ),
-// ),
-// ],
-// ),
-// ),
