@@ -164,4 +164,9 @@ class SelfTextStyle {
     color: AppColors.black,
     height: 24.3 / 18,
   );
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 }

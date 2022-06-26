@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fresh_fruits/UI/pages/categories/categories_screen.dart';
-import 'package:fresh_fruits/UI/pages/home/home_screen.dart';
-import 'package:fresh_fruits/UI/pages/shop/shop_screen.dart';
+import 'package:fresh_fruits/ui/core/app_text_style.dart';
+import 'package:fresh_fruits/ui/pages/main/categories/categories_screen.dart';
+import 'package:fresh_fruits/ui/pages/main/home/home_screen.dart';
+import 'package:fresh_fruits/ui/pages/main/shop/shop_screen.dart';
 
-class ScreensNavigationHelper extends StatefulWidget {
-  const  ScreensNavigationHelper({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  State< ScreensNavigationHelper> createState() => _ScreensNavigationHelperState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _ScreensNavigationHelperState extends State< ScreensNavigationHelper> {
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
+class _MainPageState extends State<MainPage> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     CategoriesScreen(),
     FruitsCategoryScreen(),
-    Text('Index 4: Favorites ', style: optionStyle),
-    Text('Index 5: Account ', style: optionStyle),
+    Text('Index 4: Favorites ', style: SelfTextStyle.optionStyle),
+    Text('Index 5: Account ', style: SelfTextStyle.optionStyle),
   ];
 
   void onItemTaped(int item) {

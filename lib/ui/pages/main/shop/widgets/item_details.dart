@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_fruits/UI/core/app_assets.dart';
-import 'package:fresh_fruits/UI/core/app_colors.dart';
-import 'package:fresh_fruits/UI/core/app_text_style.dart';
-import 'package:fresh_fruits/UI/pages/shop/shopping_cart_screen.dart';
+import 'package:fresh_fruits/ui/core/app_assets.dart';
+import 'package:fresh_fruits/ui/core/app_colors.dart';
+import 'package:fresh_fruits/ui/core/app_text_style.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
+import 'package:fresh_fruits/ui/pages/main/shop/shopping_cart_screen.dart';
 
 const String descriptionContent =
     """Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam """;
@@ -12,11 +12,11 @@ const String descriptionContent =
 class ItemDetailsScreen extends StatelessWidget {
   const ItemDetailsScreen({Key? key}) : super(key: key);
 
+  /// TODO: globalize Colors
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(
+      body: Column(
         children: [
           Expanded(
             child: ListView(
@@ -60,16 +60,18 @@ class ItemDetailsScreen extends StatelessWidget {
                   child: Container(
                     height: 500,
                     decoration: const BoxDecoration(
-                        color: Color(0xFFF2F2F2),
-                        borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20)),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: Offset(0, -1),
-                            blurRadius: 21,
-                            spreadRadius: 0,
-                          )
-                        ]),
+                      color: Color(0xFFF2F2F2),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(20),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, -1),
+                          blurRadius: 21,
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 38, vertical: 16),
@@ -93,10 +95,9 @@ class ItemDetailsScreen extends StatelessWidget {
                                 style: SelfTextStyle.productDetailName
                                     .copyWith(color: AppColors.yellow),
                               ),
-                              const SizedBox(width: 153),
+                              const Spacer(),
                               Container(
                                 height: 35,
-                                width: 113,
                                 padding:
                                     const EdgeInsets.only(left: 2, bottom: 3),
                                 decoration: BoxDecoration(
@@ -106,9 +107,9 @@ class ItemDetailsScreen extends StatelessWidget {
                                 child: Row(
                                   children: [
                                     IconButton(
-                                        onPressed: () {},
-                                        icon: SvgPicture.asset(
-                                            SvgAssets.icMinus)),
+                                      onPressed: () {},
+                                      icon: SvgPicture.asset(SvgAssets.icMinus),
+                                    ),
                                     const Text(
                                       '3',
                                       style: SelfTextStyle.itemsNumber,
@@ -138,7 +139,7 @@ class ItemDetailsScreen extends StatelessWidget {
                                 style: SelfTextStyle.termAndConditions
                                     .copyWith(color: const Color(0xFFAAAAAA)),
                               ),
-                              const SizedBox(width: 53),
+                              const Spacer(),
                               Row(
                                 children: [
                                   CircleAvatar(
@@ -262,7 +263,11 @@ class ItemDetailsScreen extends StatelessWidget {
                       child: AppTextButton(
                         buttonText: 'ADD TO CART \$70.0',
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ShoppingCartScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ShoppingCartScreen()));
                         },
                       ),
                     ),
@@ -272,7 +277,7 @@ class ItemDetailsScreen extends StatelessWidget {
             ],
           ),
         ],
-      )),
+      ),
     );
   }
 }

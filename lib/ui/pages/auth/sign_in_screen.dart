@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fresh_fruits/UI/core/app_assets.dart';
-import 'package:fresh_fruits/UI/pages/home/home_screen.dart';
 import 'package:fresh_fruits/ui/core/app_colors.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_field.dart';
+import 'package:fresh_fruits/ui/pages/main/home/home_screen.dart';
 
 import '../../core/app_text_style.dart';
 
@@ -38,7 +38,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.pop(context);
-                    },
+                  },
                 ),
               ),
             ],
@@ -59,18 +59,11 @@ class SignInScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                       child: Row(
-                        children: [
-                          const Text('Sign in',
-                              style: SelfTextStyle.signInButtonTextStyle),
-                          const SizedBox(
-                            width: 246,
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.cancel,
-                              size: 28,
-                            ),
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            'Sign in',
+                            style: SelfTextStyle.signInButtonTextStyle,
                           ),
                         ],
                       ),
@@ -89,7 +82,11 @@ class SignInScreen extends StatelessWidget {
                     AppTextButton(
                       buttonText: 'SIGN IN',
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()),
+                        );
                       },
                     ),
                   ],

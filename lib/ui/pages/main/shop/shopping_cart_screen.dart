@@ -6,6 +6,7 @@ import 'package:fresh_fruits/UI/core/app_text_style.dart';
 class ShoppingCartScreen extends StatelessWidget {
   const ShoppingCartScreen({Key? key}) : super(key: key);
 
+  /// flutter_swipe_action_cell: ^3.0.4 use for deleting
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +43,8 @@ class ShoppingCartScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   image: DecorationImage(
-                      image: AssetImage(ImageAssets.productBananas)),
+                    image: AssetImage(ImageAssets.productBananas),
+                  ),
                 ),
               ),
               Positioned(
