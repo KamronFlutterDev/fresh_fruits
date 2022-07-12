@@ -50,7 +50,6 @@ class RegistrationScreen extends StatelessWidget {
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(20),
                     ),
                   ),
                   child: ListView(
