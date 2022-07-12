@@ -47,12 +47,6 @@ class RegistrationScreen extends StatelessWidget {
               child: Transform.translate(
                 offset: const Offset(0, -20),
                 child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(20),
-                    ),
-                  ),
                   child: ListView(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 28,
