@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/UI/core/app_assets.dart';
 import 'package:fresh_fruits/UI/core/app_text_style.dart';
-import 'package:fresh_fruits/UI/core/widgets/app_text_field.dart';
-import 'package:fresh_fruits/UI/pages/auth/registration_screen.dart';
 import 'package:fresh_fruits/UI/pages/home/home_screen.dart';
 import 'package:fresh_fruits/UI/pages/shop/item_details_screen.dart';
 
@@ -25,6 +23,7 @@ class FruitsCategoryScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  /// TODO: having overflow error
                   Row(
                     children: [
                       IconButton(

@@ -223,7 +223,7 @@ class ShippingAddressScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-
+                  /// TODO: replace with check box, it should be selectable
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: Row(

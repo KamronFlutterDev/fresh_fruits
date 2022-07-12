@@ -13,6 +13,9 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
 
+  /// TODO: this shouldn't work as it implemented now, ths color of item
+  /// should change on hover, and then navigate to subcategory
+  /// screen(fruits category in figma)
   Color cardColor = AppColors.categoryCardInActiveColor;
   Color cardItemsColor = AppColors.categoryItemsInActiveColor;
 
@@ -157,6 +160,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                     padding: const EdgeInsets.only(bottom: 20, left: 8),
                     child: IconButton(
                         onPressed: () {
+                          /// TODO: this doesn't navigate anywhere
                           Navigator.pop(context);
                         },
                         icon: SvgPicture.asset(SvgAssets.icBackBlack)),

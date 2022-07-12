@@ -86,6 +86,8 @@ class ItemDetailsScreen extends StatelessWidget {
                             style: SelfTextStyle.productDetailName,
                           ),
                           const SizedBox(height: 7),
+
+                          /// TODO: overflow error
                           Row(
                             children: [
                               Text(
@@ -123,6 +125,8 @@ class ItemDetailsScreen extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 23),
+
+                          /// TODO: overflow error
                           Row(
                             children: [
                               SvgPicture.asset(SvgAssets.icStar),
@@ -262,7 +266,11 @@ class ItemDetailsScreen extends StatelessWidget {
                       child: AppTextButton(
                         buttonText: 'ADD TO CART \$70.0',
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ShoppingCartScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ShoppingCartScreen()));
                         },
                       ),
                     ),

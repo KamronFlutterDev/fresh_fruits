@@ -123,7 +123,7 @@ class ShoppingCartScreen extends StatelessWidget {
     ));
   }
 }
-
+/// TODO: implement https://pub.dev/packages/flutter_swipe_action_cell
 class ReusableItemDetailsCard extends StatelessWidget {
   final String itemImage;
   final String itemPrice;
@@ -158,6 +158,7 @@ class ReusableItemDetailsCard extends StatelessWidget {
                 color: AppColors.white,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28.0),
+                  /// TODO: overflow errors
                   child: Row(
                     children: [
                       Stack(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fresh_fruits/UI/pages/categories/categories_screen.dart';
 import 'package:fresh_fruits/UI/pages/home/home_screen.dart';
 import 'package:fresh_fruits/UI/pages/shop/shop_screen.dart';
@@ -18,6 +17,7 @@ class _ScreensNavigationHelperState extends State< ScreensNavigationHelper> {
     HomeScreen(),
     CategoriesScreen(),
     FruitsCategoryScreen(),
+    /// for index 4 and 5, put something so at least it doesn't look empty
     Text('Index 4: Favorites ', style: optionStyle),
     Text('Index 5: Account ', style: optionStyle),
   ];
@@ -38,6 +38,7 @@ class _ScreensNavigationHelperState extends State< ScreensNavigationHelper> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        /// TODO: replace the icons like in figma
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
