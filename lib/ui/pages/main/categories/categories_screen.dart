@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/UI/core/app_assets.dart';
 import 'package:fresh_fruits/UI/core/app_text_style.dart';
-import 'package:fresh_fruits/ui/core/app_colors.dart';
 
-import 'widgets/category_card.dart';
+import '../../../../UI/core/app_colors.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -15,7 +14,9 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
 
-  /// TODO: remove all of it
+  /// TODO: this shouldn't work as it implemented now, ths color of item
+  /// should change on hover, and then navigate to subcategory
+  /// screen(fruits category in figma)
   Color cardColor = AppColors.categoryCardInActiveColor;
   Color cardItemsColor = AppColors.categoryItemsInActiveColor;
 
@@ -43,9 +44,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Color cardNumberEightColor = AppColors.categoryCardInActiveColor;
   Color cardNumberEightItemsColor = AppColors.categoryItemsInActiveColor;
 
-  /// TODO: remove this function
+
   void updateCardColor(int cardNumber) {
-    if (cardNumber == 1) {
+
+    if ( cardNumber == 1) {
       if (cardNumberOneColor == AppColors.categoryCardInActiveColor) {
         cardNumberOneColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberOneColor == AppColors.categoryCardActiveColor) {
@@ -58,7 +60,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         cardNumberOneItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 2) {
+    if ( cardNumber == 2) {
       if (cardNumberTwoColor == AppColors.categoryCardInActiveColor) {
         cardNumberTwoColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberTwoColor == AppColors.categoryCardActiveColor) {
@@ -66,12 +68,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberTwoItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberTwoItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberTwoItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberTwoItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberTwoItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 3) {
+    if ( cardNumber == 3) {
       if (cardNumberThreeColor == AppColors.categoryCardInActiveColor) {
         cardNumberThreeColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberThreeColor == AppColors.categoryCardActiveColor) {
@@ -79,12 +80,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberThreeItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberThreeItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberThreeItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberThreeItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberThreeItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 4) {
+    if ( cardNumber == 4) {
       if (cardNumberFourColor == AppColors.categoryCardInActiveColor) {
         cardNumberFourColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberFourColor == AppColors.categoryCardActiveColor) {
@@ -92,12 +92,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberFourItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberFourItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberFourItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberFourItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberFourItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 5) {
+    if ( cardNumber == 5) {
       if (cardNumberFiveColor == AppColors.categoryCardInActiveColor) {
         cardNumberFiveColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberFiveColor == AppColors.categoryCardActiveColor) {
@@ -105,12 +104,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberFiveItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberFiveItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberFiveItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberFiveItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberFiveItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 6) {
+    if ( cardNumber == 6) {
       if (cardNumberSixColor == AppColors.categoryCardInActiveColor) {
         cardNumberSixColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberSixColor == AppColors.categoryCardActiveColor) {
@@ -118,12 +116,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberSixItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberSixItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberSixItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberSixItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberSixItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 7) {
+    if ( cardNumber == 7) {
       if (cardNumberSevenColor == AppColors.categoryCardInActiveColor) {
         cardNumberSevenColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberSevenColor == AppColors.categoryCardActiveColor) {
@@ -131,12 +128,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberSevenItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberSevenItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberSevenItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberSevenItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberSevenItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-    if (cardNumber == 8) {
+    if ( cardNumber == 8) {
       if (cardNumberEightColor == AppColors.categoryCardInActiveColor) {
         cardNumberEightColor = AppColors.categoryCardActiveColor;
       } else if (cardNumberEightColor == AppColors.categoryCardActiveColor) {
@@ -144,22 +140,19 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
       if (cardNumberEightItemsColor == AppColors.categoryItemsInActiveColor) {
         cardNumberEightItemsColor = AppColors.categoryItemsActiveColor;
-      } else if (cardNumberEightItemsColor ==
-          AppColors.categoryItemsActiveColor) {
+      } else if (cardNumberEightItemsColor == AppColors.categoryItemsActiveColor) {
         cardNumberEightItemsColor = AppColors.categoryItemsInActiveColor;
       }
     }
-  }
 
-  /// TODO: study the logic implemented in video, and adjust it to yours
-  /// https://www.youtube.com/watch?v=FOvRi1uZV2Y&ab_channel=FlutterAgency
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          children: [
+          children: <Widget>[
             Material(
               elevation: 0.5,
               child: Row(
@@ -168,6 +161,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                     padding: const EdgeInsets.only(bottom: 20, left: 8),
                     child: IconButton(
                         onPressed: () {
+                          /// TODO: this doesn't navigate anywhere
                           Navigator.pop(context);
                         },
                         icon: SvgPicture.asset(SvgAssets.icBackBlack)),
@@ -185,7 +179,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 36),
               child: Column(
-                children: [
+                children: <Widget>[
                   Row(
                     children: [
                       Expanded(
@@ -195,7 +189,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(1);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberOneColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName: SvgAssets.categoriesScrFruits,
@@ -207,7 +201,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         ),
                       ),
                       const SizedBox(
-                        width: 23
+                        width: 23,
                       ),
                       Expanded(
                         child: GestureDetector(
@@ -216,7 +210,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(2);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberTwoColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName:
@@ -240,7 +234,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(3);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberThreeColor,
                             cardChild: CategoryCardContent(
                                 itemImageAssetName:
@@ -260,7 +254,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(4);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberFourColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName: SvgAssets.categoriesScrMilk,
@@ -283,7 +277,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(5);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberFiveColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName: SvgAssets.categoriesScrOats,
@@ -302,7 +296,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(6);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberSixColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName: SvgAssets.categoriesScrBread,
@@ -325,7 +319,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(7);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberSevenColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName: SvgAssets.categoriesScrRice,
@@ -344,7 +338,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               updateCardColor(8);
                             });
                           },
-                          child: CategoryCard(
+                          child: ReusableCategoryCard(
                             color: cardNumberEightColor,
                             cardChild: CategoryCardContent(
                               itemImageAssetName: SvgAssets.categoriesScrEggs,
@@ -357,6 +351,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ],
                   ),
+
                   const SizedBox(height: 17),
                 ],
               ),
@@ -364,6 +359,75 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ReusableCategoryCard extends StatelessWidget {
+  final Widget cardChild;
+  final Color color;
+
+  const ReusableCategoryCard(
+      {Key? key, required this.cardChild, required this.color})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 138.74,
+      width: 138.74,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(28.3204),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(9, 0),
+            blurRadius: 19,
+            spreadRadius: 2,
+          )
+        ],
+      ),
+      child: cardChild,
+    );
+  }
+}
+
+class CategoryCardContent extends StatelessWidget {
+  final String itemName;
+  final String itemAmount;
+  final String itemImageAssetName;
+  final Color itemsNameAmountColor;
+
+  const CategoryCardContent(
+      {Key? key,
+      required this.itemName,
+      required this.itemAmount,
+      required this.itemImageAssetName,
+      required this.itemsNameAmountColor})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          itemImageAssetName,
+          color: itemsNameAmountColor,
+        ),
+        const SizedBox(height: 9.4),
+        Text(
+          itemName,
+          style: SelfTextStyle.categoriesScrItemsName
+              .copyWith(color: itemsNameAmountColor),
+        ),
+        Text(
+          itemAmount + 'Items',
+          style: SelfTextStyle.categoriesScrItems
+              .copyWith(color: itemsNameAmountColor),
+        ),
+      ],
     );
   }
 }

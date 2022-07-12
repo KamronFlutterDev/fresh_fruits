@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_fruits/UI/pages/home/screens_navigation_helper.dart';
 import 'package:fresh_fruits/ui/core/app_colors.dart';
-import 'package:fresh_fruits/ui/pages/auth/sign_in_screen.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SignInScreen(),
+      home: const ScreensNavigationHelper(),
       theme: ThemeData(
         fontFamily: 'Poppins',
         canvasColor: AppColors.white,

@@ -5,10 +5,10 @@ import 'package:fresh_fruits/ui/core/app_text_style.dart';
 class AppTextField extends StatelessWidget {
   final String? hintText;
   final bool obscureText;
+  final Color? filledColor;
   final EdgeInsets? padding;
   final TextStyle? hintStyle;
   final TextStyle? textStyle;
-
   final InputBorder? borderStyle;
   final Function(String)? onChanged;
   final TextInputAction? inputAction;
@@ -21,11 +21,11 @@ class AppTextField extends StatelessWidget {
     this.padding,
     this.hintText,
     this.hintStyle,
-
     this.textStyle,
     this.onChanged,
     this.controller,
     this.inputAction,
+    this.filledColor,
     this.obscureText = false,
     this.borderStyle,
     this.contentPudding,
@@ -38,26 +38,28 @@ class AppTextField extends StatelessWidget {
       padding: padding ?? const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
         onChanged: onChanged,
-        decoration: inputDecoration ?? InputDecoration(
-          contentPadding: contentPudding ??
-              const EdgeInsets.symmetric(
-                vertical: 8,
-                horizontal: 16,
-              ),
-          hintText: hintText,
-          hintStyle: hintStyle ?? SelfTextStyle.hintStyle,
-          border: _borderStyle(),
-          enabledBorder: _borderStyle(),
-          focusedBorder: _borderStyle(),
-          disabledBorder: _borderStyle(),
-        ),
+        decoration: inputDecoration ??
+            InputDecoration(
+              contentPadding: contentPudding ??
+                  const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 16,
+                  ),
+              fillColor: filledColor ?? Colors.white,
+              filled: true,
+              hintText: hintText,
+              hintStyle: hintStyle ?? SelfTextStyle.hintStyle,
+              border: _borderStyle(),
+              enabledBorder: borderStyle ?? _borderStyle(),
+              focusedBorder: _borderStyle(),
+              disabledBorder: _borderStyle(),
+            ),
         obscureText: obscureText,
         style: textStyle ?? SelfTextStyle.hintStyle,
         textInputAction: inputAction ?? TextInputAction.next,
       ),
     );
   }
-
 
   InputBorder _borderStyle() {
     return OutlineInputBorder(

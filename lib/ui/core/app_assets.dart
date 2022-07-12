@@ -46,7 +46,9 @@ class ImageAssets {
   static String productBrocoli = "assets/png/productBrocoli.png";
   static String productMashrooms = "assets/png/productBrocoli.png";
 
+  static String creditCard = "assets/png/creditCard.png";
 
+  static String moto = "assets/png/moto.png";
 }
 
 class SvgAssets {
@@ -61,6 +63,14 @@ class SvgAssets {
   static String icStar = "assets/svg/icStar.svg";
   static String icLine = "assets/svg/icLine.svg";
 
+  static String icActiveDot = "assets/svg/icActiveDot.svg";
+  static String icInActiveDot = "assets/svg/icInactiveDot.svg";
+  static String icLineBetweenDots = "assets/svg/icLineBetweenDots.svg";
+
+  static String icFullActiveDot = "assets/svg/fullActiveDot.svg";
+  static String icActiveShortLine = "assets/png/icLineActivePart.png";
+
+  static String icCancelOrange = "assets/svg/icCancelOrange.svg";
 
   static String registrationSuccess = "assets/svg/registration_success.svg";
 

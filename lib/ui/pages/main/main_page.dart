@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_fruits/ui/core/app_text_style.dart';
-import 'package:fresh_fruits/ui/pages/main/categories/categories_screen.dart';
-import 'package:fresh_fruits/ui/pages/main/home/home_screen.dart';
-import 'package:fresh_fruits/ui/pages/main/shop/shop_screen.dart';
+import 'package:fresh_fruits/UI/pages/categories/categories_screen.dart';
+import 'package:fresh_fruits/UI/pages/home/home_screen.dart';
+import 'package:fresh_fruits/UI/pages/shop/shop_screen.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+class ScreensNavigationHelper extends StatefulWidget {
+  const  ScreensNavigationHelper({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State< ScreensNavigationHelper> createState() => _ScreensNavigationHelperState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _ScreensNavigationHelperState extends State< ScreensNavigationHelper> {
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     CategoriesScreen(),
     FruitsCategoryScreen(),
-    Text('Index 4: Favorites ', style: SelfTextStyle.optionStyle),
-    Text('Index 5: Account ', style: SelfTextStyle.optionStyle),
+    /// for index 4 and 5, put something so at least it doesn't look empty
+    Text('Index 4: Favorites ', style: optionStyle),
+    Text('Index 5: Account ', style: optionStyle),
   ];
 
   void onItemTaped(int item) {
@@ -36,6 +38,7 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        /// TODO: replace the icons like in figma
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

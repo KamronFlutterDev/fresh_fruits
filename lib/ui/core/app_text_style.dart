@@ -38,12 +38,30 @@ class SelfTextStyle {
     height: 19.36 / 16,
     color: AppColors.hintGrey,
   );
+  static const TextStyle textStyle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    height: 19.53 / 15,
+    color: AppColors.black,
+  );
 
   static const TextStyle itemsOverviewInactive = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w400,
     color: Color(0xFF959A9B),
     height: 27 / 18,
+  );
+  static const TextStyle uCartHint = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 21 / 14,
+    color: Color(0xFFAFAFAF),
+  );
+  static const TextStyle uCart = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    height: 24 / 16,
+    color: Color(0xFF000000),
   );
 
   static const TextStyle homeScreTrendingsTextStyle = TextStyle(
@@ -58,13 +76,36 @@ class SelfTextStyle {
     color: AppColors.black,
     height: 36 / 24,
   );
+  static const TextStyle uCartDetailHeading = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 21 / 14,
+    color: AppColors.black,
+  );
   static const TextStyle itemsNumber = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
     height: 30 / 20,
     color: AppColors.black,
   );
-
+  static const TextStyle itemNameShippingCart = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+    height: 24 / 16,
+  );
+  static const TextStyle itemTotalPriceShippingCart = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+    color: AppColors.orange,
+    height: 27 / 17,
+  );
+  static const TextStyle itemTypeShippingCart = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: Color.fromRGBO(0, 0, 0, 0.6),
+    height: 18 / 12,
+  );
   static const TextStyle itemsOverviewActive = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
@@ -127,12 +168,6 @@ class SelfTextStyle {
     fontWeight: FontWeight.w700,
     color: AppColors.orange,
     height: 13.22 / 16.99,
-  );
-  static const TextStyle textStyle = TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w400,
-    height: 19.53 / 15,
-    color: AppColors.black,
   );
   static const TextStyle buttonStyle = TextStyle(
     fontSize: 16,

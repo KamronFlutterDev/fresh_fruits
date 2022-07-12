@@ -4,7 +4,8 @@ import 'package:fresh_fruits/ui/core/app_assets.dart';
 import 'package:fresh_fruits/ui/core/app_text_style.dart';
 import 'package:fresh_fruits/ui/core/app_colors.dart';
 import 'package:fresh_fruits/ui/pages/main/home/widgets/product_card.dart';
-import 'package:fresh_fruits/ui/pages/main/shop/widgets/item_details.dart';
+
+import '../../../../UI/pages/shop/item_details_screen.dart';
 
 class FruitsCategoryScreen extends StatelessWidget {
   const FruitsCategoryScreen({Key? key}) : super(key: key);
