@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_fruits/UI/core/app_assets.dart';
-import 'package:fresh_fruits/UI/core/app_text_style.dart';
-import 'package:fresh_fruits/UI/pages/categories/categories_screen.dart';
+import 'package:fresh_fruits/ui/core/app_assets.dart';
+import 'package:fresh_fruits/ui/core/app_text_style.dart';
 import 'package:fresh_fruits/ui/core/app_colors.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
+import 'package:fresh_fruits/ui/pages/main/categories/categories_screen.dart';
+
+import 'widgets/product_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -29,16 +31,14 @@ class HomeScreen extends StatelessWidget {
                       'Surname Name',
                       style: SelfTextStyle.authTitle,
                     ),
-                    const SizedBox(
-                      width: 160,
-                    ),
+                    const SizedBox(width: 160),
                     IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.add_alert)),
+                      onPressed: () {},
+                      icon: const Icon(Icons.add_alert),
+                    ),
                   ],
                 ),
-                const SizedBox(
-                  height: 23,
-                ),
+                const SizedBox(height: 23),
                 SizedBox(
                   height: 162,
                   // width: 213,
@@ -120,14 +120,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 211),
                     IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const CategoriesScreen()));
-                        },
-                        icon: SvgPicture.asset(SvgAssets.icForward)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const CategoriesScreen()));
+                      },
+                      icon: SvgPicture.asset(SvgAssets.icForward),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -135,6 +136,9 @@ class HomeScreen extends StatelessWidget {
                   height: 113,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
+
+                    /// TODO: refactor MaterialButton, use ListView.builder
+                    /// the goal is to make it simple
                     children: [
                       MaterialButton(
                         onPressed: () {},
@@ -249,16 +253,17 @@ class HomeScreen extends StatelessWidget {
                               child: SvgPicture.asset(
                                   SvgAssets.homeScrCategoriesEggs)),
                           decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(18),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  offset: Offset(9, 0),
-                                  blurRadius: 19.0,
-                                  spreadRadius: 2.0,
-                                )
-                              ]),
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(18),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(9, 0),
+                                blurRadius: 19.0,
+                                spreadRadius: 2.0,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       MaterialButton(
@@ -271,19 +276,21 @@ class HomeScreen extends StatelessWidget {
                           height: 73,
                           width: 93,
                           child: Center(
-                              child: SvgPicture.asset(
-                                  SvgAssets.homeScrCategoriesOats)),
+                            child: SvgPicture.asset(
+                                SvgAssets.homeScrCategoriesOats),
+                          ),
                           decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(18),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  offset: Offset(9, 0),
-                                  blurRadius: 19.0,
-                                  spreadRadius: 2.0,
-                                )
-                              ]),
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(18),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(9, 0),
+                                blurRadius: 19.0,
+                                spreadRadius: 2.0,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       MaterialButton(
@@ -296,19 +303,21 @@ class HomeScreen extends StatelessWidget {
                           height: 73,
                           width: 93,
                           child: Center(
-                              child: SvgPicture.asset(
-                                  SvgAssets.homeScrCategoriesRice)),
+                            child: SvgPicture.asset(
+                                SvgAssets.homeScrCategoriesRice),
+                          ),
                           decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(18),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  offset: Offset(9, 0),
-                                  blurRadius: 19.0,
-                                  spreadRadius: 2.0,
-                                )
-                              ]),
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(18),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(9, 0),
+                                blurRadius: 19.0,
+                                spreadRadius: 2.0,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       MaterialButton(
@@ -321,19 +330,21 @@ class HomeScreen extends StatelessWidget {
                           height: 73,
                           width: 93,
                           child: Center(
-                              child: SvgPicture.asset(
-                                  SvgAssets.homeScrCategoriesVegatables)),
+                            child: SvgPicture.asset(
+                                SvgAssets.homeScrCategoriesVegatables),
+                          ),
                           decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(18),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  offset: Offset(9, 0),
-                                  blurRadius: 19.0,
-                                  spreadRadius: 2.0,
-                                )
-                              ]),
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(18),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(9, 0),
+                                blurRadius: 19.0,
+                                spreadRadius: 2.0,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -345,12 +356,11 @@ class HomeScreen extends StatelessWidget {
                       'Trending Deals',
                       style: SelfTextStyle.authTitle,
                     ),
-                    const SizedBox(
-                      width: 160,
-                    ),
+                    const SizedBox(width: 160),
                     IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(SvgAssets.icForward)),
+                      onPressed: () {},
+                      icon: SvgPicture.asset(SvgAssets.icForward),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 13),
@@ -365,36 +375,37 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            ReusableProductCard(
-                                productImage:
-                                    ImageAssets.homeScrTrendingsAvocado,
-                                productName: 'Avocado',
-                                productPrice: '6.7',
-                                favoriteOnPressed: () {}),
+                            ProductCard(
+                              productImage: ImageAssets.homeScrTrendingsAvocado,
+                              productName: 'Avocado',
+                              productPrice: '6.7',
+                              favoriteOnPressed: () {},
+                            ),
                             const SizedBox(width: 25),
-                            ReusableProductCard(
-                                productImage:
-                                    ImageAssets.homeScrTrendingsBrocoli,
-                                productName: 'Brocoli',
-                                productPrice: '8.7',
-                                favoriteOnPressed: () {}),
+                            ProductCard(
+                              productImage: ImageAssets.homeScrTrendingsBrocoli,
+                              productName: 'Brocoli',
+                              productPrice: '8.7',
+                              favoriteOnPressed: () {},
+                            ),
                           ],
                         ),
                         const SizedBox(height: 25),
                         Row(
                           children: [
-                            ReusableProductCard(
-                                productImage:
-                                    ImageAssets.homeScrTrendingsTamato,
-                                productName: 'Tamato',
-                                productPrice: '4.9',
-                                favoriteOnPressed: () {}),
+                            ProductCard(
+                              productImage: ImageAssets.homeScrTrendingsTamato,
+                              productName: 'Tamato',
+                              productPrice: '4.9',
+                              favoriteOnPressed: () {},
+                            ),
                             const SizedBox(width: 25),
-                            ReusableProductCard(
-                                productImage: ImageAssets.homeScrTrendingsGrape,
-                                productName: 'Grape',
-                                productPrice: '7.2',
-                                favoriteOnPressed: () {}),
+                            ProductCard(
+                              productImage: ImageAssets.homeScrTrendingsGrape,
+                              productName: 'Grape',
+                              productPrice: '7.2',
+                              favoriteOnPressed: () {},
+                            ),
                           ],
                         ),
                         const SizedBox(height: 20),
@@ -419,58 +430,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class ReusableProductCard extends StatelessWidget {
-  final String productImage;
-  final String productName;
-  final String productPrice;
-  final VoidCallback favoriteOnPressed;
-
-  const ReusableProductCard(
-      {Key? key,
-      required this.productImage,
-      required this.productName,
-      required this.productPrice,
-      required this.favoriteOnPressed})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 199,
-      width: 150,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
-          image: DecorationImage(image: AssetImage(productImage))),
-      child: Stack(children: [
-        // TODO: set a functionality for icon button
-        IconButton(
-          onPressed: favoriteOnPressed,
-          icon: const Icon(
-            Icons.favorite_rounded,
-            color: Colors.red,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 131, left: 13),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                productName,
-                style: SelfTextStyle.homeScreTrendingsTextStyle,
-              ),
-              Text(
-                '\$' + productPrice,
-                style: SelfTextStyle.homeScreTrendingsTextStyle,
-              ),
-            ],
-          ),
-        ),
-      ]),
     );
   }
 }

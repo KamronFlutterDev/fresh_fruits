@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/UI/core/app_assets.dart';
 import 'package:fresh_fruits/UI/core/app_text_style.dart';
-import '../../core/app_colors.dart';
+
+import '../../../../UI/core/app_colors.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);

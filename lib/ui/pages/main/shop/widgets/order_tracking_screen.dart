@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/app_assets.dart';
-import '../../core/app_text_style.dart';
+import '../../../../../UI/core/app_assets.dart';
+import '../../../../../UI/core/app_text_style.dart';
 
 class OrderTrackingScreen extends StatelessWidget {
   const OrderTrackingScreen({Key? key}) : super(key: key);

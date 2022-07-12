@@ -4,10 +4,9 @@ import 'package:fresh_fruits/UI/core/widgets/app_text_field.dart';
 import 'package:fresh_fruits/UI/pages/shop/review_order_conformation_screen.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 
-import '../../core/app_assets.dart';
-import '../../core/app_colors.dart';
-import '../../core/app_text_style.dart';
-
+import '../../../../../UI/core/app_assets.dart';
+import '../../../../../UI/core/app_colors.dart';
+import '../../../../../UI/core/app_text_style.dart';
 class PaymentMethodScreen extends StatelessWidget {
   const PaymentMethodScreen({Key? key}) : super(key: key);
 

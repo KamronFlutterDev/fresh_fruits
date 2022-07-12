@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
-
-import '../../core/app_assets.dart';
-import '../../core/app_text_style.dart';
+import '../../../../../UI/core/app_assets.dart';
+import '../../../../../UI/core/app_text_style.dart';
 import 'order_tracking_screen.dart';
 
 class ReviewOrderConformation extends StatelessWidget {
