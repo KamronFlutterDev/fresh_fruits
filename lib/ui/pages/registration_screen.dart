@@ -5,8 +5,8 @@ import 'package:fresh_fruits/ui/core/app_text_style.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_field.dart';
 
-import '../../core/app_assets.dart';
-import '../../core/app_colors.dart';
+import '../core/app_assets.dart';
+import '../core/app_colors.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -47,6 +47,12 @@ class RegistrationScreen extends StatelessWidget {
               child: Transform.translate(
                 offset: const Offset(0, -20),
                 child: Container(
+                  decoration: const BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
+                  ),
                   child: ListView(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 28,
@@ -117,7 +123,7 @@ class RegistrationScreen extends StatelessWidget {
                                         "Congratulations",
                                         style: TextStyle(
                                           fontSize: 24,
-                                          color: Color(0xFFE67F1E),
+                                          color: AppColors.orange,
                                           height: 26.14 / 24,
                                           fontWeight: FontWeight.w700,
                                         ),
@@ -127,7 +133,7 @@ class RegistrationScreen extends StatelessWidget {
                                         'Name and Surname',
                                         style: TextStyle(
                                           fontSize: 12.92,
-                                          color: Color(0xFF7A1E76),
+                                          color: AppColors.purple,
                                           height: 14.08 / 12.92,
                                           fontWeight: FontWeight.w700,
                                         ),

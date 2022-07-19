@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 
-import '../../core/app_assets.dart';
-import '../../core/app_text_style.dart';
+import '../core/app_assets.dart';
+import '../core/app_colors.dart';
+import '../core/app_text_style.dart';
 import 'order_tracking_screen.dart';
 
 class ReviewOrderConformation extends StatelessWidget {
@@ -12,35 +12,34 @@ class ReviewOrderConformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Material(
-              elevation: 2,
-              child: SizedBox(
-                height: 83,
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 20,
-                      top: 25,
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: SvgPicture.asset(SvgAssets.icCancelOrange)),
-                    ),
-                    const Center(
-                      child: Text(
-                        'Thank You',
-                        style: SelfTextStyle.mainStyleOfEachScreenTitle,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(83),
+        child: AppBar(
+          title: const Padding(
+            padding: EdgeInsets.only(left: 78.0, top: 25),
+            child: Text(
+              'Thank you',
+              style: SelfTextStyle.mainStyleOfEachScreenTitle,
             ),
+          ),
+          leading: Padding(
+            padding: const EdgeInsets.only( top: 15),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.cancel),
+              color: AppColors.orange,
+              iconSize: 32,
+            ),
+          ),
+          backgroundColor: AppColors.white,
+          elevation: 2,
+        ),
+      ),
+      body: SafeArea(
+        child: ListView(
+          children: [
             Container(
               margin: const EdgeInsets.only(top: 100),
               child: Center(
@@ -67,16 +66,15 @@ class ReviewOrderConformation extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 96),
-            Expanded(
-                child: Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28.0),
               child: AppTextButton(
-                buttonText: 'TRACK YOUR ORDER',
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderTrackingScreen()));
-                },
+            buttonText: 'TRACK YOUR ORDER',
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderTrackingScreen()));
+            },
               ),
-            ))
+            )
           ],
         ),
       ),

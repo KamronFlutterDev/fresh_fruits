@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/UI/core/app_assets.dart';
+
 import 'package:fresh_fruits/UI/core/app_text_style.dart';
 import 'package:fresh_fruits/UI/core/widgets/app_text_field.dart';
-import 'package:fresh_fruits/UI/pages/shop/payment_screen.dart';
 import 'package:fresh_fruits/ui/core/app_colors.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
+
+import '../../../../core/app_border_styles.dart';
+import '../../widgets/user_detailed_text_widget.dart';
+import '../payment_screen.dart';
 
 class ShippingAddressScreen extends StatelessWidget {
   const ShippingAddressScreen({Key? key}) : super(key: key);
@@ -81,79 +85,44 @@ class ShippingAddressScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28),
-                    child: Text(
-                      'Full Name',
-                      style: SelfTextStyle.uCartDetailHeading,
-                    ),
-                  ),
+                  const UserDetailText(title: "Full Name"),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: AppTextField(
                       hintText: 'Rafatul Jabar',
                       textStyle: SelfTextStyle.uCart,
-                      borderStyle: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
-                      ),
+                      borderStyle: AppBorderStyle.borderStyle,
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28),
-                    child: Text(
-                      'Email Address',
-                      style: SelfTextStyle.uCartDetailHeading,
-                    ),
-                  ),
+                  const UserDetailText(title: 'Email Address'),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: AppTextField(
                       hintText: 'jabar123@gmail.com',
                       textStyle: SelfTextStyle.uCart,
-                      borderStyle: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
-                      ),
+                      borderStyle: AppBorderStyle.borderStyle,
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28),
-                    child: Text(
-                      'Phone',
-                      style: SelfTextStyle.uCartDetailHeading,
-                    ),
-                  ),
+                  const UserDetailText(title: 'Phone'),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: AppTextField(
+                      textInputType: TextInputType.number,
                       hintText: '+65 3233 2343',
                       textStyle: SelfTextStyle.uCart,
-                      borderStyle: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
-                      ),
+                      borderStyle:  AppBorderStyle.borderStyle,
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28),
-                    child: Text(
-                      'Address',
-                      style: SelfTextStyle.uCartDetailHeading,
-                    ),
-                  ),
+                  const UserDetailText(title: 'Address'),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: AppTextField(
                       hintText: 'Type your home address',
                       textStyle: SelfTextStyle.uCart,
-                      borderStyle: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
-                      ),
+                      borderStyle: AppBorderStyle.borderStyle,
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -181,11 +150,7 @@ class ShippingAddressScreen extends StatelessWidget {
                           child: AppTextField(
                             hintText: 'Enter here',
                             textStyle: SelfTextStyle.uCart,
-                            borderStyle: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide:
-                                  const BorderSide(color: Color(0xFFCACACA)),
-                            ),
+                            borderStyle:  AppBorderStyle.borderStyle,
                           ),
                         ),
                         const SizedBox(width: 19),
@@ -193,37 +158,23 @@ class ShippingAddressScreen extends StatelessWidget {
                           child: AppTextField(
                             hintText: 'Enter here',
                             textStyle: SelfTextStyle.uCart,
-                            borderStyle: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide:
-                                  const BorderSide(color: Color(0xFFCACACA)),
-                            ),
+                            borderStyle:  AppBorderStyle.borderStyle,
                           ),
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 28),
-                    child: Text(
-                      'Country',
-                      style: SelfTextStyle.uCartDetailHeading,
-                    ),
-                  ),
+                  const UserDetailText(title: 'Country'),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: AppTextField(
                       hintText: 'Choose your country',
                       textStyle: SelfTextStyle.uCart,
-                      borderStyle: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
-                      ),
+                      borderStyle:  AppBorderStyle.borderStyle,
                     ),
                   ),
                   const SizedBox(height: 10),
-
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 28),
                     child: Row(
@@ -234,15 +185,15 @@ class ShippingAddressScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: AppColors.white,
                             borderRadius: BorderRadius.circular(7),
-                            border: Border.all(
-                                color: const Color(0xFF12B76A), width: 3),
+                            border:
+                                Border.all(color: AppColors.green6A, width: 3),
                           ),
                           child: Center(
                             child: Container(
                               height: 12,
                               width: 12,
                               decoration: BoxDecoration(
-                                color: const Color(0xFF12B76A),
+                                color: AppColors.green6A,
                                 borderRadius: BorderRadius.circular(3),
                               ),
                             ),
@@ -271,7 +222,7 @@ class ShippingAddressScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        PaymentMethodScreen()));
+                                        const PaymentMethodScreen()));
                           },
                         ),
                       ),

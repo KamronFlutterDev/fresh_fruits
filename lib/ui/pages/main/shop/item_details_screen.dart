@@ -1,22 +1,45 @@
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fresh_fruits/UI/core/app_assets.dart';
-import 'package:fresh_fruits/UI/core/app_colors.dart';
-import 'package:fresh_fruits/UI/core/app_text_style.dart';
-import 'package:fresh_fruits/UI/pages/shop/shopping_cart_screen.dart';
+import 'package:fresh_fruits/UI/pages/main/shop/shopping_cart_screen.dart';
+import 'package:fresh_fruits/ui/core/app_assets.dart';
+import 'package:fresh_fruits/ui/core/app_colors.dart';
+import 'package:fresh_fruits/ui/core/app_text_style.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 
 const String descriptionContent =
     """Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam """;
 
-class ItemDetailsScreen extends StatelessWidget {
+class ItemDetailsScreen extends StatefulWidget {
   const ItemDetailsScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ItemDetailsScreen> createState() => _ItemDetailsScreenState();
+}
+
+class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
+  void _itemCounter(int counter, int num) {
+    if (num == 2) {
+      counter++;
+      _counter = counter;
+      itemsTotalPrice = itemPrice * counter;
+    } else if (num == 1) {
+      if (counter > 0) {
+        counter--;
+        _counter = counter;
+        itemsTotalPrice -= itemPrice;
+      }
+    }
+  }
+
+  int? _counter = 0;
+  double itemsTotalPrice = 0;
+  double itemPrice = 4.9;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(
+      body: Column(
         children: [
           Expanded(
             child: ListView(
@@ -26,7 +49,7 @@ class ItemDetailsScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.35,
                     width: double.infinity,
                     child: Image(
-                      image: AssetImage(ImageAssets.orange_background_imageEx),
+                      image: AssetImage(ImageAssets.productsBanana),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -51,25 +74,27 @@ class ItemDetailsScreen extends StatelessWidget {
                         size: 30,
                       ),
                     ),
-                  )
+                  ),
                 ]),
                 Container(
                   decoration: const BoxDecoration(
-                    color: Color(0xFFd18523),
+                    color: AppColors.yellow23,
                   ),
                   child: Container(
                     height: 500,
                     decoration: const BoxDecoration(
-                        color: Color(0xFFF2F2F2),
-                        borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20)),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: Offset(0, -1),
-                            blurRadius: 21,
-                            spreadRadius: 0,
-                          )
-                        ]),
+                      color: AppColors.whiteEF,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(20),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: Offset(0, -1),
+                          blurRadius: 21,
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 38, vertical: 16),
@@ -89,32 +114,39 @@ class ItemDetailsScreen extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                '\$' '4.9',
+                                '\$' + itemPrice.toString(),
                                 style: SelfTextStyle.productDetailName
                                     .copyWith(color: AppColors.yellow),
                               ),
-                              const SizedBox(width: 153),
+                              const Spacer(),
                               Container(
                                 height: 35,
-                                width: 113,
                                 padding:
                                     const EdgeInsets.only(left: 2, bottom: 3),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFEFEFEF),
+                                  color: AppColors.whiteEF,
                                   borderRadius: BorderRadius.circular(18),
                                 ),
                                 child: Row(
                                   children: [
                                     IconButton(
-                                        onPressed: () {},
-                                        icon: SvgPicture.asset(
-                                            SvgAssets.icMinus)),
-                                    const Text(
-                                      '3',
+                                      onPressed: () {
+                                        setState(() {
+                                          _itemCounter(_counter!, 1);
+                                        });
+                                      },
+                                      icon: SvgPicture.asset(SvgAssets.icMinus),
+                                    ),
+                                    Text(
+                                      _counter.toString(),
                                       style: SelfTextStyle.itemsNumber,
                                     ),
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        setState(() {
+                                          _itemCounter(_counter!, 2);
+                                        });
+                                      },
                                       icon: SvgPicture.asset(SvgAssets.icPlus),
                                     ),
                                   ],
@@ -136,25 +168,25 @@ class ItemDetailsScreen extends StatelessWidget {
                               Text(
                                 '(123 reviews)',
                                 style: SelfTextStyle.termAndConditions
-                                    .copyWith(color: const Color(0xFFAAAAAA)),
+                                    .copyWith(color: AppColors.white),
                               ),
-                              const SizedBox(width: 53),
+                              const Spacer(),
                               Row(
                                 children: [
                                   CircleAvatar(
-                                    backgroundColor: Colors.white,
+                                    backgroundColor: AppColors.white,
                                     backgroundImage: AssetImage(
                                         ImageAssets.sampleUserImage1),
                                     radius: 20,
                                   ),
                                   CircleAvatar(
-                                    backgroundColor: Colors.white,
+                                    backgroundColor: AppColors.white,
                                     backgroundImage: AssetImage(
                                         ImageAssets.sampleUserImage2),
                                     radius: 20,
                                   ),
                                   CircleAvatar(
-                                    backgroundColor: Colors.white,
+                                    backgroundColor: AppColors.white,
                                     backgroundImage: AssetImage(
                                         ImageAssets.sampleUserImage3),
                                     radius: 20,
@@ -199,7 +231,7 @@ class ItemDetailsScreen extends StatelessWidget {
                             width: 320,
                             height: 2,
                             decoration: const BoxDecoration(
-                              color: Color(0xFFDDDDDD),
+                              color: AppColors.whiteDD,
                             ),
                             child: Row(
                               children: [
@@ -246,23 +278,30 @@ class ItemDetailsScreen extends StatelessWidget {
                     width: 93,
                     margin: const EdgeInsets.only(left: 28, top: 10, right: 20),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF12B76A),
+                      color: AppColors.lightGreen,
                       borderRadius: BorderRadius.circular(32),
                     ),
-                    child: const Center(
-                        child: Icon(
-                      Icons.favorite,
-                      color: Colors.white,
-                    )),
+                    child: Center(
+                      child: FavoriteButton(
+                        valueChanged: (valueChanged) {},
+                        iconSize: 35,
+                        iconDisabledColor: AppColors.white,
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Container(
                       margin: const EdgeInsets.only(top: 6),
                       padding: const EdgeInsets.only(right: 28),
                       child: AppTextButton(
-                        buttonText: 'ADD TO CART \$70.0',
+                        buttonText: 'ADD TO CART \$' +
+                            itemsTotalPrice.toStringAsFixed(1),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const ShoppingCartScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ShoppingCartScreen()));
                         },
                       ),
                     ),
@@ -272,7 +311,7 @@ class ItemDetailsScreen extends StatelessWidget {
             ],
           ),
         ],
-      )),
+      ),
     );
   }
 }

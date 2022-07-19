@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fresh_fruits/UI/core/app_assets.dart';
+import 'package:fresh_fruits/UI/onboarding/widget/resuasable_widgets.dart';
 import 'package:fresh_fruits/UI/pages/auth/sign_in_screen.dart';
-import 'package:fresh_fruits/ui/core/app_colors.dart';
 import 'package:fresh_fruits/ui/core/app_text_style.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 import 'package:fresh_fruits/ui/pages/auth/registration_screen.dart';
+
+import '../core/app_colors.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -24,6 +26,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     }
     return list;
   }
+
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 100),
@@ -42,6 +45,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     list.add(currentPage == 2 ? button(true) : button(false));
     return list;
   }
+
   Widget button(bool isActive) {
     return isActive
         ? Column(
@@ -56,16 +60,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         MaterialPageRoute(
                             builder: (context) => const RegistrationScreen()));
                   },
-                  buttonColor: Colors.black,
+                  buttonColor: AppColors.black,
                   buttonTextStyle: SelfTextStyle.buttonStyleWhite,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 29),
                 child: AppTextButton(
-                  buttonColor: Colors.white,
+                  buttonColor: AppColors.white,
                   buttonText: 'LOGIN',
-                  buttonBorderStyle: Border.all(color: Colors.black, width: 2),
+                  buttonBorderStyle: Border.all(color: AppColors.black, width: 2),
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -93,7 +97,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: Column(
           children: [
@@ -108,21 +112,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 children: [
                   Column(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 130),
-                        child: Center(
-                          child: Image.asset(ImageAssets.onBoardingPageOne),
-                        ),
-                      ),
+                      OnBoardingImageWid(
+                          pageImage: ImageAssets.onBoardingPageOne),
                       const SizedBox(height: 54),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 55),
-                        child: const Text(
-                          'Welcome to Fresh Fruits',
-                          style: SelfTextStyle.onBoardingPageText1,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                      const OnBoardingTitleTwo(
+                          title: 'Welcome to Fresh Fruits'),
                       const SizedBox(height: 24),
                       const Text(
                         'Grocery application',
@@ -130,75 +124,46 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 10),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 75),
-                        child: const Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-                          style: SelfTextStyle.onBoardingPageText3,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                      const OnBoardingTitleTwo(
+                          title:
+                              ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'),
                       const SizedBox(height: 21),
                     ],
                   ),
                   Column(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 130),
-                        child: Center(
-                          child: Image.asset(ImageAssets.onBoardingPageOne),
-                        ),
-                      ),
+                      OnBoardingImageWid(
+                          pageImage: ImageAssets.onBoardingPageOne),
                       const SizedBox(height: 54),
                       Container(
                         padding: const EdgeInsets.only(left: 55, right: 55),
                         child: const Text(
                           'We provide best quality Fruits to your family',
                           style: SelfTextStyle.onBoardingPageText1,
-
                           textAlign: TextAlign.center,
                         ),
                       ),
                       const SizedBox(height: 14),
-                      Expanded(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 75),
-                          child: const Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
-                            style: SelfTextStyle.onBoardingPageText3,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      const Expanded(
+                        child: OnBoardingTitleTwo(
+                            title:
+                                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'),
                       ),
                       const SizedBox(height: 21),
                     ],
                   ),
                   Column(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 70),
-                        child: Center(
-                          child: Image.asset(ImageAssets.onBoardingPageThree),
-                        ),
-                      ),
+                      OnBoardingImageWid(
+                          pageImage: ImageAssets.onBoardingPageThree),
                       const SizedBox(height: 54),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 55),
-                        child: const Text(
-                          'Fast and responsibily delivery by our courir',
-                          style: SelfTextStyle.onBoardingPageText1,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                      const OnBoardingTitle(
+                          title:
+                              'Fast and responsibily delivery by our courir'),
                       const SizedBox(height: 24),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 75),
-                        child: const Text(
-                          ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-                          style: SelfTextStyle.onBoardingPageText3,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                      const OnBoardingTitleTwo(
+                          title:
+                              ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'),
                     ],
                   ),
                 ],

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fresh_fruits/UI/core/widgets/app_text_field.dart';
-import 'package:fresh_fruits/UI/pages/shop/review_order_conformation_screen.dart';
+import 'package:fresh_fruits/UI/delivery_and_user_review/review_order_conformation_screen.dart';
+import 'package:fresh_fruits/UI/pages/main/shop/widgets/reusable_credit_card.dart';
 import 'package:fresh_fruits/ui/core/widgets/app_text_button.dart';
 
-import '../../core/app_assets.dart';
-import '../../core/app_colors.dart';
-import '../../core/app_text_style.dart';
+import '../../../core/app_assets.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/app_text_style.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
   const PaymentMethodScreen({Key? key}) : super(key: key);
@@ -62,7 +63,7 @@ class PaymentMethodScreen extends StatelessWidget {
                                 Container(
                                   height: 2,
                                   width: 206,
-                                  color: const Color(0xFFCBCBCB),
+                                  color: AppColors.whiteCB,
                                   child: Container(
                                     height: 106,
                                     width: 2,
@@ -101,103 +102,41 @@ class PaymentMethodScreen extends StatelessWidget {
                       SizedBox(
                         height: 80,
                         child: ListView(
-                          // shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          children: [
-                            TextButton(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(35)))),
-                              onPressed: () {},
-                              child: Container(
-                                width: 194,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 18),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(18),
-                                    border: Border.all(color: Colors.orange)),
-                                child: const Text(
-                                  'Cash on Delivery',
-                                  style: SelfTextStyle.buttonStyle,
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(35)))),
-                              onPressed: () {},
-                              child: Container(
-                                width: 194,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 18),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFFEC54B),
-                                  borderRadius: BorderRadius.circular(18),
-                                ),
-                                child: const Text(
-                                  'Credit Card',
-                                  style: SelfTextStyle.buttonStyle,
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              style: ButtonStyle(
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(35)))),
-                              onPressed: () {},
-                              child: Container(
-                                width: 194,
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 18),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(18),
-                                    border: Border.all(color: Colors.orange)),
-                                child: const Text(
-                                  'Credit card',
-                                  style: SelfTextStyle.buttonStyle,
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ),
+                          children: const [
+                            CreditCard(
+                                backgroundColor: AppColors.white,
+                                borderColor: AppColors.yellow4B,
+                                cardTitle: 'Cash on Delivery'),
+                            CreditCard(
+                                backgroundColor: AppColors.yellow4B,
+                                borderColor: AppColors.yellow4B,
+                                cardTitle: 'Credit Card'),
+                            CreditCard(
+                                backgroundColor: AppColors.white,
+                                borderColor: AppColors.orange,
+                                cardTitle: 'Credit Card'),
                           ],
                         ),
                       ),
                       SizedBox(
                         height: 220,
-                        child: ListView(
+                        child: ListView.separated(
+                          itemCount: 2,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              const SizedBox(width: 10),
+                          itemBuilder: (context, int index) {
+                            return Container(
+                              height: 141,
+                              width: 216,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(ImageAssets.creditCard),
+                                ),
+                              ),
+                            );
+                          },
                           scrollDirection: Axis.horizontal,
-                          children: [
-                            Container(
-                              height: 141,
-                              width: 216,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(ImageAssets.creditCard),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 18),
-                            Container(
-                              height: 141,
-                              width: 216,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(ImageAssets.creditCard),
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ],
@@ -214,11 +153,10 @@ class PaymentMethodScreen extends StatelessWidget {
                     child: AppTextField(
                       hintText: 'Md Rafatul Jabar',
                       textStyle: SelfTextStyle.uCart,
-                      filledColor: const Color(0xffEAEAEA),
+                      filledColor: AppColors.whiteEA,
                       borderStyle: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide:
-                            const BorderSide(color: Color(0xFFCACACA)),
+                        borderSide: const BorderSide(color: AppColors.whiteCA),
                       ),
                     ),
                   ),
@@ -235,10 +173,10 @@ class PaymentMethodScreen extends StatelessWidget {
                     child: AppTextField(
                       hintText: '333 4444 5555 6666',
                       textStyle: SelfTextStyle.uCart,
-                      filledColor: const Color(0xffEAEAEA),
+                      filledColor: AppColors.whiteEA,
                       borderStyle: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
+                        borderSide: const BorderSide(color: AppColors.whiteCA),
                       ),
                     ),
                   ),
@@ -270,7 +208,7 @@ class PaymentMethodScreen extends StatelessWidget {
                             borderStyle: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
                               borderSide:
-                                  const BorderSide(color: Color(0xFFCACACA)),
+                                  const BorderSide(color: AppColors.whiteCA),
                             ),
                           ),
                         ),
@@ -282,7 +220,7 @@ class PaymentMethodScreen extends StatelessWidget {
                             borderStyle: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
                               borderSide:
-                                  const BorderSide(color: Color(0xFFCACACA)),
+                                  const BorderSide(color: AppColors.whiteCA),
                             ),
                           ),
                         ),
@@ -304,7 +242,7 @@ class PaymentMethodScreen extends StatelessWidget {
                       textStyle: SelfTextStyle.uCart,
                       borderStyle: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Color(0xFFCACACA)),
+                        borderSide: const BorderSide(color: AppColors.whiteCA),
                       ),
                     ),
                   ),
@@ -319,15 +257,15 @@ class PaymentMethodScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: AppColors.white,
                             borderRadius: BorderRadius.circular(7),
-                            border: Border.all(
-                                color: const Color(0xFF12B76A), width: 3),
+                            border:
+                                Border.all(color: AppColors.green6A, width: 3),
                           ),
                           child: Center(
                             child: Container(
                               height: 12,
                               width: 12,
                               decoration: BoxDecoration(
-                                color: const Color(0xFF12B76A),
+                                color: AppColors.green6A,
                                 borderRadius: BorderRadius.circular(3),
                               ),
                             ),

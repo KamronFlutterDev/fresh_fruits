@@ -1,5 +1,3 @@
-
-
 class ImageAssets {
   static String authBackground = "assets/png/auth_background.png";
 
@@ -31,7 +29,7 @@ class ImageAssets {
   static String productsMandirins = "assets/png/productsMandarin.png";
 
   static String iDetailsOrangeBackground = "assets/png/orange_background_image.png";
-  static String orange_background_imageEx = "assets/png/orange_background_imageEx.jpg";
+  static String orangeBackgroundImageEx = "assets/png/orange_background_imageEx.png";
 
   static String sampleUserImage1 = "assets/png/sampleUserImage1.png";
   static String sampleUserImage2 = "assets/png/sampleUserImage2.png";
@@ -62,7 +60,9 @@ class SvgAssets {
   static String icPlus = "assets/svg/icPlus.svg";
   static String icStar = "assets/svg/icStar.svg";
   static String icLine = "assets/svg/icLine.svg";
-
+  static String icActiveStar = "assets/svg/icActiveStar.svg";
+  static String icDotGrey = "assets/svg/icDotGrey.svg";
+  static String icActiveShortLineVertical = "assets/svg/icActiveShortLineHorizontal.svg";
   static String icActiveDot = "assets/svg/icActiveDot.svg";
   static String icInActiveDot = "assets/svg/icInactiveDot.svg";
   static String icLineBetweenDots = "assets/svg/icLineBetweenDots.svg";
@@ -79,7 +79,7 @@ class SvgAssets {
   static String homeScrCategoriesFruits = "assets/svg/homeScrCategoriesFruits.svg";
   static String homeScrCategoriesMashrooms = "assets/svg/homeScrCategoriesMashrooms.svg";
   static String homeScrCategoriesMilk = "assets/svg/homeScrCategoriesMilk.svg";
-  static String homeScrCategoriesOats = "assets/svg/homeScrCategoriesMilk.svg";
+  static String homeScrCategoriesOats = "assets/svg/homeScrCategoriesOats.svg";
   static String homeScrCategoriesRice = "assets/svg/homeScrCategoriesRice.svg";
   static String homeScrCategoriesVegatables = "assets/svg/homeScrCategoriesVegetables.svg";
 
@@ -92,4 +92,5 @@ class SvgAssets {
   static String categoriesScrEggs = "assets/svg/CategoriesScrEggs.svg";
   static String categoriesScrBread = "assets/svg/CategoriesScrBread.svg";
 
+  static String rabbishCan = "assets/svg/rabbish_can.svg";
 }

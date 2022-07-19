@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fresh_fruits/ui/core/app_colors.dart';
 
 class SelfTextStyle {
+  static const hintText = TextStyle(
+    color: AppColors.grey7C,
+  );
   static const TextStyle onBoardingPageText3 = TextStyle(
     fontWeight: FontWeight.w300,
     fontSize: 14,
@@ -18,7 +21,7 @@ class SelfTextStyle {
     fontSize: 20,
     fontWeight: FontWeight.w400,
     height: 30 / 20,
-    color: Colors.black,
+    color: AppColors.black,
   );
   static const TextStyle passwordButtonTextStyle = TextStyle(
     fontSize: 14,
@@ -44,24 +47,23 @@ class SelfTextStyle {
     height: 19.53 / 15,
     color: AppColors.black,
   );
-
   static const TextStyle itemsOverviewInactive = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w400,
-    color: Color(0xFF959A9B),
+    color: AppColors.grey9B,
     height: 27 / 18,
   );
   static const TextStyle uCartHint = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 21 / 14,
-    color: Color(0xFFAFAFAF),
+    color: AppColors.whiteFA,
   );
   static const TextStyle uCart = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     height: 24 / 16,
-    color: Color(0xFF000000),
+    color: AppColors.black,
   );
 
   static const TextStyle homeScreTrendingsTextStyle = TextStyle(
@@ -91,7 +93,7 @@ class SelfTextStyle {
   static const TextStyle itemNameShippingCart = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
+    color: AppColors.black,
     height: 24 / 16,
   );
   static const TextStyle itemTotalPriceShippingCart = TextStyle(
@@ -103,7 +105,7 @@ class SelfTextStyle {
   static const TextStyle itemTypeShippingCart = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    color: Color.fromRGBO(0, 0, 0, 0.6),
+    color:  AppColors.black,
     height: 18 / 12,
   );
   static const TextStyle itemsOverviewActive = TextStyle(
@@ -116,14 +118,14 @@ class SelfTextStyle {
   static const TextStyle shoppingCartScrTextOrange = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    color: Colors.orange,
+    color: AppColors.orange,
     height: 24 / 16,
   );
 
   static const TextStyle homeScrRecomndTextStyle = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    color: Colors.white,
+    color: AppColors.white,
     height: 24 / 16,
   );
   static const TextStyle categoriesScrItems = TextStyle(
@@ -151,11 +153,17 @@ class SelfTextStyle {
     height: 21 / 14,
     color: AppColors.yellow,
   );
+  static const TextStyle rankText = TextStyle(
+    fontSize: 50,
+    fontWeight: FontWeight.w600,
+    height: 75 / 50,
+    color: AppColors.black,
+  );
   static const TextStyle signInNameAndSurname = TextStyle(
     fontSize: 12.92,
     fontWeight: FontWeight.w700,
     height: 14.08 / 12.92,
-    color: Color(0xFF7A1E76),
+    color: AppColors.purple,
   );
   static const TextStyle asd = TextStyle(
     fontSize: 700,
@@ -198,5 +206,10 @@ class SelfTextStyle {
     fontWeight: FontWeight.w700,
     color: AppColors.black,
     height: 24.3 / 18,
+  );
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
   );
 }
